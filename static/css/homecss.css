@@ -41,5 +41,8 @@ img{
 	height:100%;
 }
 .bgc{
-	height:600px;
+	height:700px;
+}
+.hide{
+	display:none;
 }
