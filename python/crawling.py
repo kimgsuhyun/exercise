@@ -15,20 +15,39 @@ a = soup.select('.tableGray > tbody > tr')
 b=a[0].get_text()
 d=b.replace("	",'')
 
-c=d.split('\n')
+
 
 
 # print c[2].encode('utf-8')+","+c[4].encode('utf-8')+","+c[7].encode('utf-8')+c[10].encode('utf-8')
 
 
-for i in range(100):
-	print c[i].encode('utf-8'),
+# for i in range(100):
+# 	print c[i].encode('utf-8'),
 
+# print a
+b=a[2].get_text()
+c=d.split('\n')
 
+# for i in c:
 
+#    # print c.index(i)
 
-# for i in range(49):
-	# print a[i].text.encode("utf-8")
-# for i in range(8):
-#    img = a[i].text
-#    print img.encode("utf-8")
+#    print i.encode('utf-8')
+nutrition={}
+c[56].encode('utf-8')+c[66].encode('utf-8')+c[76].encode('utf-8')+c[86].encode('utf-8')+c[96].encode('utf-8')
+
+nutrition['numb'] = c[2].encode('utf-8')
+nutrition['type'] = c[4].encode('utf-8')
+nutrition['menu'] = c[7].encode('utf-8')
+nutrition['provide'] = c[9].encode('utf-8')
+nutrition['kcal'] = c[16].encode('utf-8')
+nutrition['carbo'] = c[26].encode('utf-8')
+nutrition['protein'] = c[36].encode('utf-8')
+nutrition['fat'] = c[46].encode('utf-8')
+nutrition['sugar'] = c[56].encode('utf-8')
+nutrition['na'] = c[66].encode('utf-8')
+nutrition['choles'] = c[76].encode('utf-8')
+nutrition['saturate'] = c[86].encode('utf-8')
+nutrition['trans'] = c[96].encode('utf-8')
+
+print nutrition['trans']
