@@ -55,9 +55,13 @@ def latlon(fil):
 def start():
 	return render_template("index2.html")
 
-@app.route('/map', methods=['GET', 'POST'])
-def map():
-	return render_template("map.html")
+@app.route('/map/<idx>', methods=['GET'])
+def map(idx):
+	for i in range(len(dataStorage.database)):
+		if int(idx) == dataStorage.database[i]['num']:
+			lat = dataStorage.database[i]['lat']
+			lon = dataStorage.database[i]['lon']
+			return render_template('map.html', lat=lat, lon=lon)
 
 @app.route('/index', methods=['GET', 'POST'])
 def login():
@@ -72,11 +76,12 @@ def show_entries():
 	entries = dataStorage.out()
 	return render_template('show_entries.html', entries=entries)
 
-
-
 @app.route('/add', methods=['POST'])
 def add_entry():
 	storage={}
+	#make key
+	storage['num'] = dataStorage.num
+
 	#title save
 	storage['title'] = request.form['title']
 
@@ -95,9 +100,13 @@ def add_entry():
 	#photo exif
 	exif_data = get_exif_data(StringIO(filestream))
 	storage['exif']=exif_data
+
+	#map info(lat.lan)
 	latlon_r=latlon(exif_data)
-	storage['latlon']=latlon_r
+	storage['lat']=latlon_r[0]
+	storage['lon']=latlon_r[1]
 	dataStorage.put(storage)
+	dataStorage.num += 1
 	return redirect(url_for('show_entries'))
 
 
