@@ -50,9 +50,14 @@ def latlon(fil):
 	if lonref == 'W':
 		lon2 = -lon2
 	return lat2, lon2
+	
 @app.route('/', methods=['GET', 'POST'])
 def start():
 	return render_template("index2.html")
+
+@app.route('/map', methods=['GET', 'POST'])
+def map():
+	return render_template("map.html")
 
 @app.route('/index', methods=['GET', 'POST'])
 def login():

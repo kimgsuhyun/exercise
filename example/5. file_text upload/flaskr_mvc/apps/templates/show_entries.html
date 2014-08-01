@@ -44,17 +44,7 @@
                         minMaxLevel : [ 1, 14 ],
                         size : new nhn.api.map.Size(500, 400)
                       });
-                        var mapZoom = new nhn.api.map.ZoomControl(); // - 줌 컨트롤 선언
-                        themeMapButton = new nhn.api.map.ThemeMapBtn(); // - 자전거지도 버튼 선언
-                        mapTypeChangeButton = new nhn.api.map.MapTypeBtn(); // - 지도 타입 버튼 선언
-집                        trafficButton.setPosition({top:10, right:110}); // - 실시간 교통지도 버튼 위치 지정
-                        mapTypeChangeButton.setPosition({top:10, left:50}); // - 지도 타입 버튼 위치 지정
-                        themeMapButton.setPosition({top:10, right:10}); // - 자전거지도 버튼 위치 지정
-                        mapZoom.setPosition({left:10, top:10}); // - 줌 컨트롤 위치 지정.
-                        oMap.addControl(mapZoom);
-                        oMap.addControl(themeMapButton);
-                        oMap.addControl(mapTypeChangeButton);
-                        oMap.addControl(trafficButton);
+ 
 
                         var oSize = new nhn.api.map.Size(28, 37); 
                         var oOffset = new nhn.api.map.Size(14, 37); 
