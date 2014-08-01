@@ -1,0 +1,45 @@
+.siz{
+	width:150px;
+}
+#hive{
+	background-color:black;
+}
+.mar{
+	margin-left:130px;
+	margin-right:130px;
+}
+.wh{
+	width:1000px;
+	height:auto;
+}
+.h{
+	height:auto;
+}
+.tm{
+	margin-top:50px;
+}
+
+img{
+	width:100%;
+	height:100%;
+}
+.bgc{
+	height:700px;
+}
+.bgcbutton{
+	height:500px;
+}
+.hide{
+	display:none;
+}
+.aone{
+	width:200px;
+	height:200px;
+	float:left;
+	display:inline-block;
+}
+.atwo{
+	width:200px;
+	height:200px;
+	display:inline-block;
+}

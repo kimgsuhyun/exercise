@@ -1,0 +1,41 @@
+body{
+	background-color: #333;
+	font-family: 'Noto Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:24px;
+}
+.total{
+
+}
+.menu{
+	width:100%;
+	height:100px;
+	background-color: #333;
+	text-size:40px;
+
+}
+#menu1{
+	width:30%;
+	height:100px;
+	text-align:center;
+	color:white;
+	display:inline-block;
+}
+.Rcontent1{
+	margin-left:15%;
+	margin-right:15%;
+	margin-bottom:13%;
+	margin-top:100px;
+	width:70%;
+	height:450px;
+	background-color: white;
+}
+img{
+	width:27%;
+	height:450px;
+}
+a{
+	text-decoration: none;
+	color:white;
+	margin-top:50px;
+	
+}

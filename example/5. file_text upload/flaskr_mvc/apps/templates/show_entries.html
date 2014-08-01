@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<form action="{{ url_for('add_entry') }}" enctype="multipart/form-data" method="post" class="add-entry">
+  <dl>
+    <dt>Title:
+      <dd><input type="text" size=30 name="title">
+        <dt>Text:
+          <dd><textarea name="contents" rows=5 cols=40></textarea>
+            <dt>Photo:
+              <dd><input type="file" name="photo">
+                <dd><input type="submit" value="POST">
+                </dl>
+              </form>
+
+              <ul class="entries">
+                {% for entry in entries %}
+                <li>
+                  <h2>
+                    {{ entry['title'] }}
+                  </h2>
+                  <h5>
+                    {{ entry['contents'] }}
+                  </h5>
+
+                    {% if entry['Photo'] %}
+                    <!-- select photo by its key and print it -->
+                    <img src="show/{{ entry['Photo'] }}"><br>
+                    <p>{{ entry['latlon']}}<p>
+                      <p href="./map.html">map</a>
+                    <div id = "testMap" style="border:1px solid #000; width:500px; height:400px; margin:20px;"></div>
+                    <script type="text/javascript">
+                      var oPoint = new nhn.api.map.LatLng(37.539722222222217, 127.07722222222222);
+                      nhn.api.map.setDefaultPoint('LatLng');
+                      oMap = new nhn.api.map.Map('testMap' ,{
+                        point : oPoint, 
+                        zoom : 10,
+                        enableWheelZoom : true,
+                        enableDragPan : true,
+                        enableDblClickZoom : false,
+                        mapMode : 0,
+                        activateTrafficMap : false,
+                        activateBicycleMap : false,
+                        minMaxLevel : [ 1, 14 ],
+                        size : new nhn.api.map.Size(500, 400)
+                      });
+                        var mapZoom = new nhn.api.map.ZoomControl(); // - 줌 컨트롤 선언
+                        themeMapButton = new nhn.api.map.ThemeMapBtn(); // - 자전거지도 버튼 선언
+                        mapTypeChangeButton = new nhn.api.map.MapTypeBtn(); // - 지도 타입 버튼 선언
+집                        trafficButton.setPosition({top:10, right:110}); // - 실시간 교통지도 버튼 위치 지정
+                        mapTypeChangeButton.setPosition({top:10, left:50}); // - 지도 타입 버튼 위치 지정
+                        themeMapButton.setPosition({top:10, right:10}); // - 자전거지도 버튼 위치 지정
+                        mapZoom.setPosition({left:10, top:10}); // - 줌 컨트롤 위치 지정.
+                        oMap.addControl(mapZoom);
+                        oMap.addControl(themeMapButton);
+                        oMap.addControl(mapTypeChangeButton);
+                        oMap.addControl(trafficButton);
+
+                        var oSize = new nhn.api.map.Size(28, 37); 
+                        var oOffset = new nhn.api.map.Size(14, 37); 
+                        var oIcon = new nhn.api.map.Icon('http://static.naver.com/maps2/icons/pin_spot2.png', oSize, oOffset);
+                        var oIcon = new nhn.api.map.Icon('http://static.naver.com/maps2/icons/pin_spot2.png', oSize, oOffset);
+                        oMarker = new nhn.api.map.Marker(oIcon, { title : '우리' }); 
+                        oMarker.setPoint(oMap.getCenter()); 
+                        oMap.addOverlay(oMarker); 
+
+                        oLabel = new nhn.api.map.MarkerLabel(); 
+                        oMap.addOverlay(oLabel); 
+                        oLabel.setVisible(true, oMarker); 
+                      </script>
+            
+                      {% endif%}
+
+                      {% else %}
+                  <li><em>Unbelievable.  No entries here so far</em>
+                        {% endfor %}
+                      </ul>
+                      {% endblock %}
+
+
+
+
+

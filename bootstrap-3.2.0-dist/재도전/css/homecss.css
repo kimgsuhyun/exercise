@@ -1,0 +1,45 @@
+.slidevar{
+	float:right;
+	padding-top: 15px;
+}
+.navbar {
+	margin-bottom:0px;
+	background-color: rgba(0,0,0,.8);
+	position:fixed;
+	width:100%;
+}
+
+#Rcontent1{
+	height:1000px;
+	width:75%;
+	float:center;
+	background-color: black;
+	display: inline-block;
+	margin-left:17%;
+}
+.upper{
+	margin-top:60px;
+}
+
+
+
+#name{
+	color:white;
+	font-size:25px;
+	font-family: "Algerian";
+}
+
+.profile{
+	float:right;
+	color:#181907;
+	margin-bottom:20px;
+	margin-right:20px;
+	font-size:18px;
+}
+.sidebar{
+	background-color: green;
+}
+img{
+	width:100%;
+	height:100%;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>GET / POST</title>
+</head>
+<body>
+	<div>
+		GET : 
+		<form action="index" method="get">
+			<input type="text" name="test_get">
+			<input type="Submit" value="Submit">
+		</form>
+
+		<a href = "https://www.google.co.kr/search?q=html+inpiut&oq=html+inpiut&aqs=chrome..69i57j0l5.4101j0j4&sourceid=chrome&es_sm=93&ie=UTF-8#newwindow=1&q={{ variable_get }}" target="_blank"> {{ variable_get }} </a>
+	</div>
+
+	<div>
+		POST : 
+		<form action="https://www.google.co.kr/search?q=html+inpiut&oq=html+inpiut&aqs=chrome..69i57j0l5.4101j0j4&sourceid=chrome&es_sm=93&ie=UTF-8#newwindow=1&q=" target="_blank" method="get">
+			<input type="text" name="text_get">
+			<input type="Submit" value="Submit" >
+		</form>
+
+		{{ variable_get }}
+	</div>
+
+</body>
+</html>

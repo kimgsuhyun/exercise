@@ -1,0 +1,42 @@
+
+.namecard{
+	background-color:#A4A4A4;
+	font-family: Trebuchet MS;
+	font-size:15px;
+	border: 5px solid black;
+	border-radius: 25px;
+	width:400px;
+	height:200px;
+
+}
+#label{
+	background-color:#424242;
+	width:454px;
+	height:20px;
+	margin-top:20px;
+	margin-bottom:20px;
+	color:white;
+	text-align: center;
+}
+.img1{
+	width:150px;
+	height:150px;
+	border-radius:100%;
+}
+
+.photo{
+	float:left;
+	margin-bottom:20px;
+	margin-left:30px;
+}
+.profile{
+	float:right;
+	color:#181907;
+	margin-bottom:20px;
+	margin-right:20px;
+}
+
+a{
+	text-decoration:none;
+	color:#181907;
+}
